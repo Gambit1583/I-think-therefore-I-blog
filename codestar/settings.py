@@ -112,16 +112,16 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'think_doing_cleat_511832',
-#         'USER': 'uqppfw1kmiy',
-#         'PASSWORD': 'Z3fIkIO4i58e',
-#         'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'think_doing_cleat_511832',
+        'USER': 'uqppfw1kmiy',
+        'PASSWORD': 'Z3fIkIO4i58e',
+        'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
+        'PORT': '5432',
+    }
+}
 
 
 if 'test' in sys.argv:
@@ -182,3 +182,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import django_heroku
+django_heroku.settings(locals())

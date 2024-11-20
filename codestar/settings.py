@@ -18,6 +18,11 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+os.environ.setdefault( 
+    "DATABASE_URL", 
+    "postgres://uqppfw1kmiy:Z3fIkIO4i58e@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/think_doing_cleat_511832" 
+)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -29,10 +34,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    '*', '8000-nielmc-django-blog-tbkovgv7j0.us2.codeanyapp.com', '.herokuapp.com']
+    '*','8000-gambit1583-ithinktheref-2gghur6l8n1.ws.codeinstitute-ide.net' '8000-nielmc-django-blog-tbkovgv7j0.us2.codeanyapp.com', '.herokuapp.com']
 
 
 # Application definition
@@ -108,8 +113,16 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'think_doing_cleat_511832',
+        'USER': 'uqppfw1kmiy',
+        'PASSWORD': 'Z3fIkIO4i58e',
+        'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
+        'PORT': '5432',
+    }
 }
+
 
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'

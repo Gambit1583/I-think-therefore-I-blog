@@ -105,23 +105,23 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'think_doing_cleat_511832',
-        'USER': 'uqppfw1kmiy',
-        'PASSWORD': 'Z3fIkIO4i58e',
-        'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'think_doing_cleat_511832',
+#         'USER': 'uqppfw1kmiy',
+#         'PASSWORD': 'Z3fIkIO4i58e',
+#         'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
+#         'PORT': '5432',
+#     }
+# }
 
 
 if 'test' in sys.argv:
@@ -130,7 +130,8 @@ if 'test' in sys.argv:
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeanyapp.com",
-    "https://*.herokuapp.com"
+    "https://*.herokuapp.com",
+    'https://8000-gambit1583-ithinktheref-2gghur6l8n1.ws.codeinstitute-ide.net',
 ]
 
 # Password validation

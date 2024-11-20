@@ -18,9 +18,9 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-os.environ.setdefault( 
-    "DATABASE_URL", 
-    "postgres://uqppfw1kmiy:Z3fIkIO4i58e@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/think_doing_cleat_511832" 
+os.environ.setdefault(
+    "DATABASE_URL",
+    "postgres://uqppfw1kmiy:Z3fIkIO4i58e@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/think_doing_cleat_511832"
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

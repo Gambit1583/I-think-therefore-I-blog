@@ -39,7 +39,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '*','8000-gambit1583-ithinktheref-2gghur6l8n1.ws.codeinstitute-ide.net' '8000-nielmc-django-blog-tbkovgv7j0.us2.codeanyapp.com', '.herokuapp.com', '127.0.0.1', 'localhost']
+    '*','8000-gambit1583-ithinktheref-2gghur6l8n1.ws.codeinstitute-ide.net' '8000-nielmc-django-blog-tbkovgv7j0.us2.codeanyapp.com', '.herokuapp.com', 'https://bloggers-corner-66a1f35154b3.herokuapp.com/' '127.0.0.1', 'localhost']
 
 
 # Application definition

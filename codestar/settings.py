@@ -114,16 +114,16 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'aim_marry_robin_783292',
-        'USER': 'neondb_owner',
-        'PASSWORD': '63kdGPpLBtoh',
-        'HOST': 'ep-mute-leaf-a2pc0k07.eu-central-1.aws.neon.tech',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'aim_marry_robin_783292',
+#         'USER': 'neondb_owner',
+#         'PASSWORD': '63kdGPpLBtoh',
+#         'HOST': 'ep-mute-leaf-a2pc0k07.eu-central-1.aws.neon.tech',
+#         'PORT': '5432',
+#     }
+# }
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))

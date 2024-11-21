@@ -114,16 +114,16 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'think_doing_cleat_511832',
-#         'USER': 'uqppfw1kmiy',
-#         'PASSWORD': 'Z3fIkIO4i58e',
-#         'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'think_doing_cleat_511832',
+        'USER': 'uqppfw1kmiy',
+        'PASSWORD': 'Z3fIkIO4i58e',
+        'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
+        'PORT': '5432',
+    }
+}
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))

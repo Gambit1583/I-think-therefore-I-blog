@@ -15,20 +15,15 @@ import os
 import sys
 from django.contrib.messages import constants as messages
 import dj_database_url
-import environ
+# import environ
 
-env = environ.Env()
+# env = environ.Env()
 
-environ.Env.read_env()
+# environ.Env.read_env()
 
 
 if os.path.isfile('env.py'):
     import env
-
-os.environ.setdefault(
-    "DATABASE_URL",
-    "postgres://uqppfw1kmiy:Z3fIkIO4i58e@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/think_doing_cleat_511832"
-)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -94,7 +89,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [TEMPLATES_DIR],
-        'APP_DIRS': False,
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -119,17 +114,20 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'think_doing_cleat_511832',
-        'USER': 'uqppfw1kmiy',
-        'PASSWORD': 'Z3fIkIO4i58e',
-        'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'think_doing_cleat_511832',
+#         'USER': 'uqppfw1kmiy',
+#         'PASSWORD': 'Z3fIkIO4i58e',
+#         'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
+#         'PORT': '5432',
+#     }
+# }
 
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
@@ -181,14 +179,18 @@ MESSAGE_TAGS = {
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import django_heroku
-django_heroku.settings(locals())
+# import django_heroku
+# django_heroku.settings(locals())
+
+# print('database:', DATABASES)

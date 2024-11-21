@@ -117,10 +117,10 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'think_doing_cleat_511832',
-        'USER': 'uqppfw1kmiy',
-        'PASSWORD': 'Z3fIkIO4i58e',
-        'HOST': 'ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech',
+        'NAME': 'aim_marry_robin_783292',
+        'USER': 'neondb_owner',
+        'PASSWORD': '63kdGPpLBtoh',
+        'HOST': 'ep-mute-leaf-a2pc0k07.eu-central-1.aws.neon.tech',
         'PORT': '5432',
     }
 }
